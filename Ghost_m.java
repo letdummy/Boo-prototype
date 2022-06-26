@@ -19,6 +19,10 @@ public class Ghost_m extends Actor
     {
         setImage(male.getCurrentImage());
         
+        //to select character male
+        //edit gender and gender_mirror value in World_Gender 
+        //to new GifImage("Ghost M right.gif");
+        //and new GifImage("Ghost M left.gif");        
         if(Greenfoot.mouseClicked(this)){
             MyWorld.menu.play();
             World_Gender.gender = male;

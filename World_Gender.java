@@ -1,21 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class World_Gender here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+   Created by:
+   Agus Ardiansyah Nh
+   Aldin Nasrun Minalloh
+   Hanifah Afkar Nabila
+*/
+
 public class World_Gender extends World
 {
-
-    
-    /**
-     * Constructor for objects of class World_Gender.
-     * 
-     */
+    //created static empty variable so that we can use/edit its value later
     static GifImage gender;
     static GifImage gender_mirror;
+    
     
     public World_Gender()
     {    
@@ -23,16 +20,15 @@ public class World_Gender extends World
         super(600, 400, 1); 
         prepare();
         
+        //if this world(World_Gender) is played(run), 
+        //music from MyWorld will be stoped
         MyWorld.end.stop();
         MyWorld.background.stop();
     }
 
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
     private void prepare()
     {
+        //simply, this will executed before world played(run)
         showText("Select Gender",300,100);
         Ghost_f ghost_f = new Ghost_f();
         addObject(ghost_f,200,200);
@@ -41,6 +37,4 @@ public class World_Gender extends World
         Help help = new Help();
         addObject(help,556,365);
     }
-    
-    
 }

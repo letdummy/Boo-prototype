@@ -8,34 +8,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
-    
+    //why static? because we want to get and edit its value later
     static Counter lives = new Counter("Lives : ");
     static Counter score = new Counter("Score : ");
+    
+    //why static? because we want remove this later
     static Hp nyawa1 = new Hp();
     static Hp nyawa2 = new Hp();
     static Hp nyawa3 = new Hp();
-    static Door door = new Door();
-   
+    
+    //why static? because we want to use it multiple time in diff class
     static GreenfootSound background = new GreenfootSound("bgm.wav");
     static GreenfootSound point = new GreenfootSound("point.wav");
     static GreenfootSound menu = new GreenfootSound("menu.wav");
     static GreenfootSound end = new GreenfootSound("end.wav");
+    static GreenfootSound blast = new GreenfootSound("blast.wav");
+    
     
     public MyWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        // Create a new world with 600x400 cells
         super(600, 400, 1); 
         
+        //setting our counter value
         MyWorld.lives.setValue(3); 
         MyWorld.score.setValue(0);
         
-        prepare();
-        
+        //adding our object to the world, why here? because if we add it in
+        //prepare(), we wouldn't be able to manipulate this later
         addObject(lives,55,20);        
         addObject(score,55,50);  
         addObject(nyawa1, 500, 20);
@@ -43,6 +43,7 @@ public class MyWorld extends World
         addObject(nyawa3, 560, 20);
         
         
+        prepare();
         started();  
 
     }
@@ -53,6 +54,7 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        
         Ghost chara = new Ghost();
         addObject(chara,302,206);
         Bat bat = new Bat();
@@ -63,6 +65,7 @@ public class MyWorld extends World
     }
 
     public void started(){
+        //background music will be played if MyWorld have been started
         background.playLoop();
     }
 }

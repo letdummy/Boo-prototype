@@ -14,18 +14,24 @@ public class Ghost extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    int level = 0;
     int nyawa = MyWorld.lives.getValue();
 
     GreenfootSound jump = new GreenfootSound("jump.wav");
     GreenfootSound shoot = new GreenfootSound("shoot.wav");
+    
+    
+    /**
+     
+    !!! 
+    Because of gender and gender_mirror value in World_Gender 
+    is no longer empty we can use its value here (either its male or female)
+    
+    */
     public void act()
     {
         GifImage selected = World_Gender.gender; 
         setImage(selected.getCurrentImage());
-        move();
-        // checkLives();
-              
+        move();     
     }
     
     public void move(){
@@ -46,20 +52,4 @@ public class Ghost extends Actor
             shoot.play();
         }
     }
-    
-    public void checkLives(){
-        if(nyawa == (2)){
-            getWorld().addObject(MyWorld.nyawa1, 500, 20);
-            getWorld().addObject(MyWorld.nyawa2, 530, 20);
-            getWorld().addObject(MyWorld.nyawa3, 560, 20);
-        }        
-        else if(nyawa == (2)){
-            getWorld().removeObject(MyWorld.nyawa3);
-        }
-        
-        if(isTouching(Enemy.class)){
-            MyWorld.lives.add(-1);
-        }  
-    }
-
 }
