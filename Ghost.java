@@ -31,7 +31,9 @@ public class Ghost extends Actor
     {
         GifImage selected = World_Gender.gender; 
         setImage(selected.getCurrentImage());
-        move();     
+        move();    
+        
+
     }
     
     public void move(){

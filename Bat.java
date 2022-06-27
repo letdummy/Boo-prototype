@@ -53,8 +53,8 @@ public class Bat extends Actor
          - if lives = 3, then it will replace nyawa3 to Hp0
          - if lives = 2, then it will replace nyawa2 to Hp0
          - if lives = 1, then it will replace nyawa1 to Hp0, 
-                         stop background music playLoop, 
-                         also start to playLoop end music
+                         stop background.wav music playLoop, 
+                         also start to playLoop end.wav music
                          and end this game.
         */
         if(nyawa == (3)){
@@ -80,6 +80,11 @@ public class Bat extends Actor
             //Add this object to MyWorld
             getWorld().addObject(new BgEnd(), 300, 200);
             getWorld().addObject(new GameOver(), 300, 200);
+            
+            //Change ghost to RIP
+            getWorld().addObject(new Rip(), getX(), getY());
+            getWorld().removeObject(MyWorld.ghost);
+                    
             
             //World finished
             MyWorld.background.stop();

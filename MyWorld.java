@@ -11,6 +11,7 @@ public class MyWorld extends World
     //why static? because we want to get and edit its value later
     static Counter lives = new Counter("Lives : ");
     static Counter score = new Counter("Score : ");
+    static Ghost ghost = new Ghost();
     
     //why static? because we want remove this later
     static Hp nyawa1 = new Hp();
@@ -38,11 +39,12 @@ public class MyWorld extends World
         //prepare(), we wouldn't be able to manipulate this later
         addObject(lives,55,20);        
         addObject(score,55,50);  
+        addObject(ghost,302,206);  
         addObject(nyawa1, 500, 20);
         addObject(nyawa2, 530, 20);
         addObject(nyawa3, 560, 20);
         
-        
+              
         prepare();
         started();  
 
@@ -55,8 +57,7 @@ public class MyWorld extends World
     private void prepare()
     {
         
-        Ghost chara = new Ghost();
-        addObject(chara,302,206);
+
         Bat bat = new Bat();
         addObject(bat,570,206);        
 
