@@ -34,7 +34,5 @@ public class World_Gender extends World
         addObject(ghost_f,200,200);
         Ghost_m ghost_m = new Ghost_m();
         addObject(ghost_m,400,200);
-        Help help = new Help();
-        addObject(help,556,365);
     }
 }

@@ -20,5 +20,7 @@ public class Door extends Actor
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new World_Gender());
         }
+        
+        getWorld().showText("retry", getX(), getY()+30);
     }
 }

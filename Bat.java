@@ -72,6 +72,9 @@ public class Bat extends Actor
         }
         
         else if(nyawa == (1)){
+            Greenfoot.setWorld(new World_End());
+            
+            /*
             //Replace or menimpa Hp to Hp0 in exact same location
             //to create effect that Hp reduced
             getWorld().addObject(new Hp0(), MyWorld.nyawa1.getX(), 
@@ -90,6 +93,7 @@ public class Bat extends Actor
             MyWorld.background.stop();
             MyWorld.end.playLoop();            
             Greenfoot.stop();
+            */
         }
     }     
     

@@ -49,7 +49,7 @@ public class Enemy extends Actor
             getWorld().removeObject(MyWorld.nyawa1);
             
             getWorld().addObject(new BgEnd(), 300, 200);
-            getWorld().addObject(new GameOver(), 300, 200);
+            
             Greenfoot.stop();
             
         }
